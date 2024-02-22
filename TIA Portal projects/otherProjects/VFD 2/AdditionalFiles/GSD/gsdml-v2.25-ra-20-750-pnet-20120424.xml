@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile  ..\XSD\GSDML-DeviceProfile-v2.25.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x0002" DeviceID="0x0001">
+      <InfoText TextId="TOK_DevIdent_InfoText" />
+      <VendorName Value="Rockwell Automation" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="Drives" ProductFamily="Rockwell Automation" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <!-- ============================================ -->
+        <!--                  DAP2: Standard              -->
+        <!-- ============================================ -->
+        <DeviceAccessPointItem ID="DAP 2" PhysicalSlots="0..17" ModuleIdentNumber="0x00000002" MinDeviceInterval="32" ImplementationType="ERTEC200" DNS_CompatibleName="20-750-PNET" AddressAssignment="DCP;DHCP;LOCAL" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.1" MaxSupportedRecordSize="4068" DeviceAccessSupported="false">
+          <ModuleInfo>
+            <Name TextId="TOK_Standard" />
+            <InfoText TextId="TOK_ModInfo_InfoTextId_DAP2" />
+            <VendorName Value="Rockwell Automation" />
+            <OrderNumber Value="20-750-PNET" />
+            <HardwareRelease Value="01" />
+            <SoftwareRelease Value="1.1" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" />
+            <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="152" MaxOutputLength="152" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="ID_Mod_01" FixedInSlots="1" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_02" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_03" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_04" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_05" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_06" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_07" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_08" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_09" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_10" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_11" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_12" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_13" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_14" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_15" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_16" AllowedInSlots="2..17" />
+            <ModuleItemRef ModuleItemTarget="ID_Mod_17" AllowedInSlots="2..17" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP 2" SubmoduleIdentNumber="0x0001">
+              <IOData />
+              <ModuleInfo>
+                <Name TextId="TOK_Standard" />
+                <InfoText TextId="TOK_ModInfo_InfoTextId_DAP2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_1 I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="TOK_DAP_InterfaceModule" IsochroneModeSupported="false" SupportedProtocols="SNMP;LLDP" SupportedMibs="MIB2" NetworkComponentDiagnosisSupported="true">
+              <SynchronisationMode MaxLocalJitter="50" SupportedSyncProtocols="PTCP" />
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_1 P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="TOK_Port1" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down" />
+          </SystemDefinedSubmoduleList>
+          <Graphics>
+            <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_2" />
+          </Graphics>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="ID_Mod_01" ModuleIdentNumber="0x00000020">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_Ctrl_Stat_Ref_FB_8IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_Ctrl_Stat_Ref_FB_8IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_8" Length="8" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_8" Length="8" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_Ctrl_Stat_Ref_FB_8IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_Ctrl_Stat_Ref_FB_8IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_02" ModuleIdentNumber="0x00000021">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL1_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL1_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL1_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL1_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_03" ModuleIdentNumber="0x00000022">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL2_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL2_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL2_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL2_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_04" ModuleIdentNumber="0x00000023">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL3_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL3_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL3_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL3_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_05" ModuleIdentNumber="0x00000024">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL4_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL4_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="5" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL4_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL4_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_06" ModuleIdentNumber="0x00000025">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL5_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL5_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="6" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL5_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL5_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_07" ModuleIdentNumber="0x00000026">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL6_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL6_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="7" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL6_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL6_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_08" ModuleIdentNumber="0x00000027">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL7_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL7_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL7_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL7_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_09" ModuleIdentNumber="0x00000028">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL8_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL8_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="9" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL8_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL8_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_10" ModuleIdentNumber="0x00000029">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL9_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL9_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL9_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL9_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_11" ModuleIdentNumber="0x0000002A">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL10_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL10_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL10_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL10_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_12" ModuleIdentNumber="0x0000002B">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL11_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL11_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL11_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL11_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_13" ModuleIdentNumber="0x0000002C">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL12_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL12_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="13" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL12_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL12_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_14" ModuleIdentNumber="0x0000002D">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL13_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL13_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="14" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL13_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL13_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_15" ModuleIdentNumber="0x0000002E">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL14_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL14_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="15" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL14_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL14_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_16" ModuleIdentNumber="0x0000002F">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL15_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL15_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL15_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL15_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="ID_Mod_17" ModuleIdentNumber="0x00000030">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_DL16_4IO" />
+            <InfoText TextId="TOK_InfoTextId_Module_DL16_4IO" />
+            <HardwareRelease Value="1.0" />
+            <SoftwareRelease Value="1.0" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Input_DataItem_4" UseAsBits="false" />
+                </Input>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="Unsigned32" TextId="TOK_Output_DataItem_4" UseAsBits="false" />
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_DL16_4IO" />
+                <InfoText TextId="TOK_InfoTextId_Module_DL16_4IO" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <ChannelDiagList>
+        <ChannelDiagItem ErrorType="258">
+          <Name TextId="TOK_Name_ErrorType2" />
+          <Help TextId="TOK_HelpName_ErrorType2" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="259">
+          <Name TextId="TOK_Name_ErrorType3" />
+          <Help TextId="TOK_HelpName_ErrorType3" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="260">
+          <Name TextId="TOK_Name_ErrorType4" />
+          <Help TextId="TOK_HelpName_ErrorType4" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="261">
+          <Name TextId="TOK_Name_ErrorType5" />
+          <Help TextId="TOK_HelpName_ErrorType5" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="263">
+          <Name TextId="TOK_Name_ErrorType7" />
+          <Help TextId="TOK_HelpName_ErrorType7" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="264">
+          <Name TextId="TOK_Name_ErrorType8" />
+          <Help TextId="TOK_HelpName_ErrorType8" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="265">
+          <Name TextId="TOK_Name_ErrorType9" />
+          <Help TextId="TOK_HelpName_ErrorType9" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="266">
+          <Name TextId="TOK_Name_ErrorType10" />
+          <Help TextId="TOK_HelpName_ErrorType10" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="268">
+          <Name TextId="TOK_Name_ErrorType12" />
+          <Help TextId="TOK_HelpName_ErrorType12" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="269">
+          <Name TextId="TOK_Name_ErrorType13" />
+          <Help TextId="TOK_HelpName_ErrorType13" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="270">
+          <Name TextId="TOK_Name_ErrorType14" />
+          <Help TextId="TOK_HelpName_ErrorType14" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="271">
+          <Name TextId="TOK_Name_ErrorType15" />
+          <Help TextId="TOK_HelpName_ErrorType15" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="273">
+          <Name TextId="TOK_Name_ErrorType17" />
+          <Help TextId="TOK_HelpName_ErrorType17" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="274">
+          <Name TextId="TOK_Name_ErrorType18" />
+          <Help TextId="TOK_HelpName_ErrorType18" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="275">
+          <Name TextId="TOK_Name_ErrorType19" />
+          <Help TextId="TOK_HelpName_ErrorType19" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="276">
+          <Name TextId="TOK_Name_ErrorType20" />
+          <Help TextId="TOK_HelpName_ErrorType20" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="277">
+          <Name TextId="TOK_Name_ErrorType21" />
+          <Help TextId="TOK_HelpName_ErrorType21" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="280">
+          <Name TextId="TOK_Name_ErrorType24" />
+          <Help TextId="TOK_HelpName_ErrorType24" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="281">
+          <Name TextId="TOK_Name_ErrorType25" />
+          <Help TextId="TOK_HelpName_ErrorType25" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="282">
+          <Name TextId="TOK_Name_ErrorType26" />
+          <Help TextId="TOK_HelpName_ErrorType26" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="283">
+          <Name TextId="TOK_Name_ErrorType27" />
+          <Help TextId="TOK_HelpName_ErrorType27" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="284">
+          <Name TextId="TOK_Name_ErrorType28" />
+          <Help TextId="TOK_HelpName_ErrorType28" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="285">
+          <Name TextId="TOK_Name_ErrorType29" />
+          <Help TextId="TOK_HelpName_ErrorType29" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="289">
+          <Name TextId="TOK_Name_ErrorType33" />
+          <Help TextId="TOK_HelpName_ErrorType33" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="292">
+          <Name TextId="TOK_Name_ErrorType36" />
+          <Help TextId="TOK_HelpName_ErrorType36" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="294">
+          <Name TextId="TOK_Name_ErrorType38" />
+          <Help TextId="TOK_HelpName_ErrorType38" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="295">
+          <Name TextId="TOK_Name_ErrorType39" />
+          <Help TextId="TOK_HelpName_ErrorType39" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="296">
+          <Name TextId="TOK_Name_ErrorType40" />
+          <Help TextId="TOK_HelpName_ErrorType40" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="297">
+          <Name TextId="TOK_Name_ErrorType41" />
+          <Help TextId="TOK_HelpName_ErrorType41" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="298">
+          <Name TextId="TOK_Name_ErrorType42" />
+          <Help TextId="TOK_HelpName_ErrorType42" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="299">
+          <Name TextId="TOK_Name_ErrorType43" />
+          <Help TextId="TOK_HelpName_ErrorType43" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="300">
+          <Name TextId="TOK_Name_ErrorType44" />
+          <Help TextId="TOK_HelpName_ErrorType44" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="301">
+          <Name TextId="TOK_Name_ErrorType45" />
+          <Help TextId="TOK_HelpName_ErrorType45" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="302">
+          <Name TextId="TOK_Name_ErrorType46" />
+          <Help TextId="TOK_HelpName_ErrorType46" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="304">
+          <Name TextId="TOK_Name_ErrorType48" />
+          <Help TextId="TOK_HelpName_ErrorType48" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="305">
+          <Name TextId="TOK_Name_ErrorType49" />
+          <Help TextId="TOK_HelpName_ErrorType49" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="307">
+          <Name TextId="TOK_Name_ErrorType51" />
+          <Help TextId="TOK_HelpName_ErrorType51" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="311">
+          <Name TextId="TOK_Name_ErrorType55" />
+          <Help TextId="TOK_HelpName_ErrorType55" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="314">
+          <Name TextId="TOK_Name_ErrorType58" />
+          <Help TextId="TOK_HelpName_ErrorType58" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="315">
+          <Name TextId="TOK_Name_ErrorType59" />
+          <Help TextId="TOK_HelpName_ErrorType59" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="317">
+          <Name TextId="TOK_Name_ErrorType61" />
+          <Help TextId="TOK_HelpName_ErrorType61" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="318">
+          <Name TextId="TOK_Name_ErrorType62" />
+          <Help TextId="TOK_HelpName_ErrorType62" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="320">
+          <Name TextId="TOK_Name_ErrorType64" />
+          <Help TextId="TOK_HelpName_ErrorType64" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="323">
+          <Name TextId="TOK_Name_ErrorType67" />
+          <Help TextId="TOK_HelpName_ErrorType67" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="327">
+          <Name TextId="TOK_Name_ErrorType71" />
+          <Help TextId="TOK_HelpName_ErrorType71" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="328">
+          <Name TextId="TOK_Name_ErrorType72" />
+          <Help TextId="TOK_HelpName_ErrorType72" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="329">
+          <Name TextId="TOK_Name_ErrorType73" />
+          <Help TextId="TOK_HelpName_ErrorType73" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="330">
+          <Name TextId="TOK_Name_ErrorType74" />
+          <Help TextId="TOK_HelpName_ErrorType74" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="331">
+          <Name TextId="TOK_Name_ErrorType75" />
+          <Help TextId="TOK_HelpName_ErrorType75" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="332">
+          <Name TextId="TOK_Name_ErrorType76" />
+          <Help TextId="TOK_HelpName_ErrorType76" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="333">
+          <Name TextId="TOK_Name_ErrorType77" />
+          <Help TextId="TOK_HelpName_ErrorType77" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="334">
+          <Name TextId="TOK_Name_ErrorType78" />
+          <Help TextId="TOK_HelpName_ErrorType78" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="335">
+          <Name TextId="TOK_Name_ErrorType79" />
+          <Help TextId="TOK_HelpName_ErrorType79" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="336">
+          <Name TextId="TOK_Name_ErrorType80" />
+          <Help TextId="TOK_HelpName_ErrorType80" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="337">
+          <Name TextId="TOK_Name_ErrorType81" />
+          <Help TextId="TOK_HelpName_ErrorType81" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="338">
+          <Name TextId="TOK_Name_ErrorType82" />
+          <Help TextId="TOK_HelpName_ErrorType82" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="339">
+          <Name TextId="TOK_Name_ErrorType83" />
+          <Help TextId="TOK_HelpName_ErrorType83" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="340">
+          <Name TextId="TOK_Name_ErrorType84" />
+          <Help TextId="TOK_HelpName_ErrorType84" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="341">
+          <Name TextId="TOK_Name_ErrorType85" />
+          <Help TextId="TOK_HelpName_ErrorType85" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="342">
+          <Name TextId="TOK_Name_ErrorType86" />
+          <Help TextId="TOK_HelpName_ErrorType86" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="343">
+          <Name TextId="TOK_Name_ErrorType87" />
+          <Help TextId="TOK_HelpName_ErrorType87" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="347">
+          <Name TextId="TOK_Name_ErrorType91" />
+          <Help TextId="TOK_HelpName_ErrorType91" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="349">
+          <Name TextId="TOK_Name_ErrorType93" />
+          <Help TextId="TOK_HelpName_ErrorType93" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="350">
+          <Name TextId="TOK_Name_ErrorType94" />
+          <Help TextId="TOK_HelpName_ErrorType94" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="351">
+          <Name TextId="TOK_Name_ErrorType95" />
+          <Help TextId="TOK_HelpName_ErrorType95" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="352">
+          <Name TextId="TOK_Name_ErrorType96" />
+          <Help TextId="TOK_HelpName_ErrorType96" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="353">
+          <Name TextId="TOK_Name_ErrorType97" />
+          <Help TextId="TOK_HelpName_ErrorType97" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="356">
+          <Name TextId="TOK_Name_ErrorType100" />
+          <Help TextId="TOK_HelpName_ErrorType100" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="357">
+          <Name TextId="TOK_Name_ErrorType101" />
+          <Help TextId="TOK_HelpName_ErrorType101" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="358">
+          <Name TextId="TOK_Name_ErrorType102" />
+          <Help TextId="TOK_HelpName_ErrorType102" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="359">
+          <Name TextId="TOK_Name_ErrorType103" />
+          <Help TextId="TOK_HelpName_ErrorType103" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="360">
+          <Name TextId="TOK_Name_ErrorType104" />
+          <Help TextId="TOK_HelpName_ErrorType104" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="362">
+          <Name TextId="TOK_Name_ErrorType106" />
+          <Help TextId="TOK_HelpName_ErrorType106" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="363">
+          <Name TextId="TOK_Name_ErrorType107" />
+          <Help TextId="TOK_HelpName_ErrorType107" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="364">
+          <Name TextId="TOK_Name_ErrorType108" />
+          <Help TextId="TOK_HelpName_ErrorType108" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="367">
+          <Name TextId="TOK_Name_ErrorType111" />
+          <Help TextId="TOK_HelpName_ErrorType111" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="368">
+          <Name TextId="TOK_Name_ErrorType112" />
+          <Help TextId="TOK_HelpName_ErrorType112" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="369">
+          <Name TextId="TOK_Name_ErrorType113" />
+          <Help TextId="TOK_HelpName_ErrorType113" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="371">
+          <Name TextId="TOK_Name_ErrorType115" />
+          <Help TextId="TOK_HelpName_ErrorType115" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="372">
+          <Name TextId="TOK_Name_ErrorType116" />
+          <Help TextId="TOK_HelpName_ErrorType116" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="373">
+          <Name TextId="TOK_Name_ErrorType117" />
+          <Help TextId="TOK_HelpName_ErrorType117" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="374">
+          <Name TextId="TOK_Name_ErrorType118" />
+          <Help TextId="TOK_HelpName_ErrorType118" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="380">
+          <Name TextId="TOK_Name_ErrorType124" />
+          <Help TextId="TOK_HelpName_ErrorType124" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="381">
+          <Name TextId="TOK_Name_ErrorType125" />
+          <Help TextId="TOK_HelpName_ErrorType125" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="390">
+          <Name TextId="TOK_Name_ErrorType134" />
+          <Help TextId="TOK_HelpName_ErrorType134" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="393">
+          <Name TextId="TOK_Name_ErrorType137" />
+          <Help TextId="TOK_HelpName_ErrorType137" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="394">
+          <Name TextId="TOK_Name_ErrorType138" />
+          <Help TextId="TOK_HelpName_ErrorType138" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="397">
+          <Name TextId="TOK_Name_ErrorType141" />
+          <Help TextId="TOK_HelpName_ErrorType141" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="398">
+          <Name TextId="TOK_Name_ErrorType142" />
+          <Help TextId="TOK_HelpName_ErrorType142" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="399">
+          <Name TextId="TOK_Name_ErrorType143" />
+          <Help TextId="TOK_HelpName_ErrorType143" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="400">
+          <Name TextId="TOK_Name_ErrorType144" />
+          <Help TextId="TOK_HelpName_ErrorType144" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="401">
+          <Name TextId="TOK_Name_ErrorType145" />
+          <Help TextId="TOK_HelpName_ErrorType145" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="408">
+          <Name TextId="TOK_Name_ErrorType152" />
+          <Help TextId="TOK_HelpName_ErrorType152" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="411">
+          <Name TextId="TOK_Name_ErrorType155" />
+          <Help TextId="TOK_HelpName_ErrorType155" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="413">
+          <Name TextId="TOK_Name_ErrorType157" />
+          <Help TextId="TOK_HelpName_ErrorType157" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="414">
+          <Name TextId="TOK_Name_ErrorType158" />
+          <Help TextId="TOK_HelpName_ErrorType158" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="417">
+          <Name TextId="TOK_Name_ErrorType161" />
+          <Help TextId="TOK_HelpName_ErrorType161" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="418">
+          <Name TextId="TOK_Name_ErrorType162" />
+          <Help TextId="TOK_HelpName_ErrorType162" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="424">
+          <Name TextId="TOK_Name_ErrorType168" />
+          <Help TextId="TOK_HelpName_ErrorType168" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="425">
+          <Name TextId="TOK_Name_ErrorType169" />
+          <Help TextId="TOK_HelpName_ErrorType169" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="426">
+          <Name TextId="TOK_Name_ErrorType170" />
+          <Help TextId="TOK_HelpName_ErrorType170" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="427">
+          <Name TextId="TOK_Name_ErrorType171" />
+          <Help TextId="TOK_HelpName_ErrorType171" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="433">
+          <Name TextId="TOK_Name_ErrorType177" />
+          <Help TextId="TOK_HelpName_ErrorType177" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="434">
+          <Name TextId="TOK_Name_ErrorType178" />
+          <Help TextId="TOK_HelpName_ErrorType178" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="435">
+          <Name TextId="TOK_Name_ErrorType179" />
+          <Help TextId="TOK_HelpName_ErrorType179" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="441">
+          <Name TextId="TOK_Name_ErrorType185" />
+          <Help TextId="TOK_HelpName_ErrorType185" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="442">
+          <Name TextId="TOK_Name_ErrorType186" />
+          <Help TextId="TOK_HelpName_ErrorType186" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="443">
+          <Name TextId="TOK_Name_ErrorType187" />
+          <Help TextId="TOK_HelpName_ErrorType187" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="446">
+          <Name TextId="TOK_Name_ErrorType190" />
+          <Help TextId="TOK_HelpName_ErrorType190" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="447">
+          <Name TextId="TOK_Name_ErrorType191" />
+          <Help TextId="TOK_HelpName_ErrorType191" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="448">
+          <Name TextId="TOK_Name_ErrorType192" />
+          <Help TextId="TOK_HelpName_ErrorType192" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="449">
+          <Name TextId="TOK_Name_ErrorType193" />
+          <Help TextId="TOK_HelpName_ErrorType193" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="457">
+          <Name TextId="TOK_Name_ErrorType201" />
+          <Help TextId="TOK_HelpName_ErrorType201" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="458">
+          <Name TextId="TOK_Name_ErrorType202" />
+          <Help TextId="TOK_HelpName_ErrorType202" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="459">
+          <Name TextId="TOK_Name_ErrorType203" />
+          <Help TextId="TOK_HelpName_ErrorType203" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="460">
+          <Name TextId="TOK_Name_ErrorType204" />
+          <Help TextId="TOK_HelpName_ErrorType204" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="461">
+          <Name TextId="TOK_Name_ErrorType205" />
+          <Help TextId="TOK_HelpName_ErrorType205" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="466">
+          <Name TextId="TOK_Name_ErrorType210" />
+          <Help TextId="TOK_HelpName_ErrorType210" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="467">
+          <Name TextId="TOK_Name_ErrorType211" />
+          <Help TextId="TOK_HelpName_ErrorType211" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="468">
+          <Name TextId="TOK_Name_ErrorType212" />
+          <Help TextId="TOK_HelpName_ErrorType212" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="469">
+          <Name TextId="TOK_Name_ErrorType213" />
+          <Help TextId="TOK_HelpName_ErrorType213" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="470">
+          <Name TextId="TOK_Name_ErrorType214" />
+          <Help TextId="TOK_HelpName_ErrorType214" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="480">
+          <Name TextId="TOK_Name_ErrorType224" />
+          <Help TextId="TOK_HelpName_ErrorType224" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="481">
+          <Name TextId="TOK_Name_ErrorType225" />
+          <Help TextId="TOK_HelpName_ErrorType225" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="482">
+          <Name TextId="TOK_Name_ErrorType226" />
+          <Help TextId="TOK_HelpName_ErrorType226" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="483">
+          <Name TextId="TOK_Name_ErrorType227" />
+          <Help TextId="TOK_HelpName_ErrorType227" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="484">
+          <Name TextId="TOK_Name_ErrorType228" />
+          <Help TextId="TOK_HelpName_ErrorType228" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="485">
+          <Name TextId="TOK_Name_ErrorType229" />
+          <Help TextId="TOK_HelpName_ErrorType229" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="486">
+          <Name TextId="TOK_Name_ErrorType230" />
+          <Help TextId="TOK_HelpName_ErrorType230" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="487">
+          <Name TextId="TOK_Name_ErrorType231" />
+          <Help TextId="TOK_HelpName_ErrorType231" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="488">
+          <Name TextId="TOK_Name_ErrorType232" />
+          <Help TextId="TOK_HelpName_ErrorType232" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="489">
+          <Name TextId="TOK_Name_ErrorType233" />
+          <Help TextId="TOK_HelpName_ErrorType233" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="490">
+          <Name TextId="TOK_Name_ErrorType234" />
+          <Help TextId="TOK_HelpName_ErrorType234" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="500">
+          <Name TextId="TOK_Name_ErrorType244" />
+          <Help TextId="TOK_HelpName_ErrorType244" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="501">
+          <Name TextId="TOK_Name_ErrorType245" />
+          <Help TextId="TOK_HelpName_ErrorType245" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="502">
+          <Name TextId="TOK_Name_ErrorType246" />
+          <Help TextId="TOK_HelpName_ErrorType246" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="503">
+          <Name TextId="TOK_Name_ErrorType247" />
+          <Help TextId="TOK_HelpName_ErrorType247" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="504">
+          <Name TextId="TOK_Name_ErrorType248" />
+          <Help TextId="TOK_HelpName_ErrorType248" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="505">
+          <Name TextId="TOK_Name_ErrorType249" />
+          <Help TextId="TOK_HelpName_ErrorType249" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="506">
+          <Name TextId="TOK_Name_ErrorType250" />
+          <Help TextId="TOK_HelpName_ErrorType250" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="507">
+          <Name TextId="TOK_Name_ErrorType251" />
+          <Help TextId="TOK_HelpName_ErrorType251" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="508">
+          <Name TextId="TOK_Name_ErrorType252" />
+          <Help TextId="TOK_HelpName_ErrorType252" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="509">
+          <Name TextId="TOK_Name_ErrorType253" />
+          <Help TextId="TOK_HelpName_ErrorType253" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="510">
+          <Name TextId="TOK_Name_ErrorType254" />
+          <Help TextId="TOK_HelpName_ErrorType254" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="520">
+          <Name TextId="TOK_Name_ErrorType264" />
+          <Help TextId="TOK_HelpName_ErrorType264" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="521">
+          <Name TextId="TOK_Name_ErrorType265" />
+          <Help TextId="TOK_HelpName_ErrorType265" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="522">
+          <Name TextId="TOK_Name_ErrorType266" />
+          <Help TextId="TOK_HelpName_ErrorType266" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="523">
+          <Name TextId="TOK_Name_ErrorType267" />
+          <Help TextId="TOK_HelpName_ErrorType267" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="524">
+          <Name TextId="TOK_Name_ErrorType268" />
+          <Help TextId="TOK_HelpName_ErrorType268" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="525">
+          <Name TextId="TOK_Name_ErrorType269" />
+          <Help TextId="TOK_HelpName_ErrorType269" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="526">
+          <Name TextId="TOK_Name_ErrorType270" />
+          <Help TextId="TOK_HelpName_ErrorType270" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="527">
+          <Name TextId="TOK_Name_ErrorType271" />
+          <Help TextId="TOK_HelpName_ErrorType271" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="528">
+          <Name TextId="TOK_Name_ErrorType272" />
+          <Help TextId="TOK_HelpName_ErrorType272" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="529">
+          <Name TextId="TOK_Name_ErrorType273" />
+          <Help TextId="TOK_HelpName_ErrorType273" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="530">
+          <Name TextId="TOK_Name_ErrorType274" />
+          <Help TextId="TOK_HelpName_ErrorType274" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="537">
+          <Name TextId="TOK_Name_ErrorType281" />
+          <Help TextId="TOK_HelpName_ErrorType281" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="538">
+          <Name TextId="TOK_Name_ErrorType282" />
+          <Help TextId="TOK_HelpName_ErrorType282" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="547">
+          <Name TextId="TOK_Name_ErrorType291" />
+          <Help TextId="TOK_HelpName_ErrorType291" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="548">
+          <Name TextId="TOK_Name_ErrorType292" />
+          <Help TextId="TOK_HelpName_ErrorType292" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="549">
+          <Name TextId="TOK_Name_ErrorType293" />
+          <Help TextId="TOK_HelpName_ErrorType293" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="550">
+          <Name TextId="TOK_Name_ErrorType294" />
+          <Help TextId="TOK_HelpName_ErrorType294" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="551">
+          <Name TextId="TOK_Name_ErrorType295" />
+          <Help TextId="TOK_HelpName_ErrorType295" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="552">
+          <Name TextId="TOK_Name_ErrorType296" />
+          <Help TextId="TOK_HelpName_ErrorType296" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="563">
+          <Name TextId="TOK_Name_ErrorType307" />
+          <Help TextId="TOK_HelpName_ErrorType307" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="564">
+          <Name TextId="TOK_Name_ErrorType308" />
+          <Help TextId="TOK_HelpName_ErrorType308" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1174">
+          <Name TextId="TOK_Name_ErrorType918" />
+          <Help TextId="TOK_HelpName_ErrorType918" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1175">
+          <Name TextId="TOK_Name_ErrorType919" />
+          <Help TextId="TOK_HelpName_ErrorType919" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="1176">
+          <Name TextId="TOK_Name_ErrorType920" />
+          <Help TextId="TOK_HelpName_ErrorType920" />
+        </ChannelDiagItem>
+        <ChannelDiagItem ErrorType="14293">
+          <Name TextId="TOK_Name_ErrorType14037" />
+          <Help TextId="TOK_HelpName_ErrorType14037" />
+        </ChannelDiagItem>
+      </ChannelDiagList>
+      <GraphicsList>
+        <GraphicItem ID="ID_Graph_2" GraphicFile="GSDML_0002_20_750_PNET_DAP2" />
+      </GraphicsList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!--english-->
+          <Text TextId="TOK_DevIdent_InfoText" Value="20-750-PNET" />
+          <Text TextId="Rockwell Automation" Value="Rockwell Automation" />
+          <Text TextId="TOK_Standard" Value="20-750-PNET Single Port, Standard" />
+          <Text TextId="20-750-PNET" Value="20-750-PNET" />
+          <Text TextId="TOK_ModInfo_InfoTextId_DAP2" Value="20-750-PNET, Standard" />
+          <!--port name-->
+          <Text TextId="TOK_Subslot_8000" Value="X1" />
+          <Text TextId="TOK_Subslot_8001" Value="X1 P1" />
+          <Text TextId="TOK_DAP_InterfaceModule" Value="Interface" />
+          <Text TextId="TOK_Port1" Value="RJ45 10/100 MBit/s" />
+          <!--module name-->
+          <Text TextId="TOK_TextId_Module_Ctrl_Stat_Ref_FB_8IO" Value="Ctrl/Stat+Ref/FB" />
+          <Text TextId="TOK_TextId_Module_DL1_4IO" Value="Datalink01" />
+          <Text TextId="TOK_TextId_Module_DL2_4IO" Value="Datalink02" />
+          <Text TextId="TOK_TextId_Module_DL3_4IO" Value="Datalink03" />
+          <Text TextId="TOK_TextId_Module_DL4_4IO" Value="Datalink04" />
+          <Text TextId="TOK_TextId_Module_DL5_4IO" Value="Datalink05" />
+          <Text TextId="TOK_TextId_Module_DL6_4IO" Value="Datalink06" />
+          <Text TextId="TOK_TextId_Module_DL7_4IO" Value="Datalink07" />
+          <Text TextId="TOK_TextId_Module_DL8_4IO" Value="Datalink08" />
+          <Text TextId="TOK_TextId_Module_DL9_4IO" Value="Datalink09" />
+          <Text TextId="TOK_TextId_Module_DL10_4IO" Value="Datalink10" />
+          <Text TextId="TOK_TextId_Module_DL11_4IO" Value="Datalink11" />
+          <Text TextId="TOK_TextId_Module_DL12_4IO" Value="Datalink12" />
+          <Text TextId="TOK_TextId_Module_DL13_4IO" Value="Datalink13" />
+          <Text TextId="TOK_TextId_Module_DL14_4IO" Value="Datalink14" />
+          <Text TextId="TOK_TextId_Module_DL15_4IO" Value="Datalink15" />
+          <Text TextId="TOK_TextId_Module_DL16_4IO" Value="Datalink16" />
+          <!--module info name-->
+          <Text TextId="TOK_InfoTextId_Module_Ctrl_Stat_Ref_FB_8IO" Value="8 bytes IO (overall consistency) - ModuleIdentNumber:0x20 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL1_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x21 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL2_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x22 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL3_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x23 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL4_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x24 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL5_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x25 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL6_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x26 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL7_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x27 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL8_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x28 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL9_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x29 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL10_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x2a - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL11_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x2b - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL12_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x2c - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL13_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x2d - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL14_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x2e - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL15_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x2f - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <Text TextId="TOK_InfoTextId_Module_DL16_4IO" Value="4 bytes IO (overall consistency) - ModuleIdentNumber:0x30 - SubmoduleIdentNumber:0x0001 - API:0x00" />
+          <!--dataitem name-->
+          <Text TextId="TOK_Input_DataItem_4" Value="Input 4 bytes" />
+          <Text TextId="TOK_Output_DataItem_4" Value="Output 4 bytes" />
+          <Text TextId="TOK_Input_DataItem_8" Value="Input 8 bytes" />
+          <Text TextId="TOK_Output_DataItem_8" Value="Output 8 bytes" />
+          <!--errortype name-->
+          <Text TextId="TOK_Name_ErrorType2" Value="Auxiliary Input" />
+          <Text TextId="TOK_Name_ErrorType3" Value="Power Loss" />
+          <Text TextId="TOK_Name_ErrorType4" Value="UnderVoltage" />
+          <Text TextId="TOK_Name_ErrorType5" Value="OverVoltage" />
+          <Text TextId="TOK_Name_ErrorType7" Value="Motor Overload" />
+          <Text TextId="TOK_Name_ErrorType8" Value="Heatsink OvrTemp" />
+          <Text TextId="TOK_Name_ErrorType9" Value="Trnsistr OvrTemp" />
+          <Text TextId="TOK_Name_ErrorType10" Value="DynBrake OvrTemp" />
+          <Text TextId="TOK_Name_ErrorType12" Value="HW OverCurrent" />
+          <Text TextId="TOK_Name_ErrorType13" Value="Ground Fault" />
+          <Text TextId="TOK_Name_ErrorType14" Value="Ground Warning" />
+          <Text TextId="TOK_Name_ErrorType15" Value="Load Loss" />
+          <Text TextId="TOK_Name_ErrorType17" Value="Input Phase Loss"></Text>
+          <Text TextId="TOK_Name_ErrorType18" Value="Motor PTC Trip" />
+          <Text TextId="TOK_Name_ErrorType19" Value="Task Overrun" />
+          <Text TextId="TOK_Name_ErrorType20" Value="TorqPrv Spd Band" />
+          <Text TextId="TOK_Name_ErrorType21" Value="Output PhaseLoss" />
+          <Text TextId="TOK_Name_ErrorType24" Value="Decel Inhibit" />
+          <Text TextId="TOK_Name_ErrorType25" Value="OverSpeed Limit" />
+          <Text TextId="TOK_Name_ErrorType26" Value="Brake Slipped" />
+          <Text TextId="TOK_Name_ErrorType27" Value="Torq Prove Cflct" />
+          <Text TextId="TOK_Name_ErrorType28" Value="TP Encls Config" />
+          <Text TextId="TOK_Name_ErrorType29" Value="Analog In Loss" />
+          <Text TextId="TOK_Name_ErrorType33" Value="AuRsts Exhausted" />
+          <Text TextId="TOK_Name_ErrorType36" Value="SW OverCurrent" />
+          <Text TextId="TOK_Name_ErrorType38" Value="Phase U to Grnd" />
+          <Text TextId="TOK_Name_ErrorType39" Value="Phase V to Grnd" />
+          <Text TextId="TOK_Name_ErrorType40" Value="Phase W to Grnd" />
+          <Text TextId="TOK_Name_ErrorType41" Value="Phase UV Short" />
+          <Text TextId="TOK_Name_ErrorType42" Value="Phase VW Short" />
+          <Text TextId="TOK_Name_ErrorType43" Value="Phase WU Short" />
+          <Text TextId="TOK_Name_ErrorType44" Value="Phase UNegToGrnd" />
+          <Text TextId="TOK_Name_ErrorType45" Value="Phase VNegToGrnd" />
+          <Text TextId="TOK_Name_ErrorType46" Value="Phase WNegToGrnd" />
+          <Text TextId="TOK_Name_ErrorType48" Value="System Defaulted" />
+          <Text TextId="TOK_Name_ErrorType49" Value="Drive Powerup" />
+          <Text TextId="TOK_Name_ErrorType51" Value="Clr Fault Queue" />
+          <Text TextId="TOK_Name_ErrorType55" Value="Ctrl Bd Overtemp" />
+          <Text TextId="TOK_Name_ErrorType58" Value="Module Defaulted" />
+          <Text TextId="TOK_Name_ErrorType59" Value="Invalid Code" />
+          <Text TextId="TOK_Name_ErrorType61" Value="Shear Pin 1" />
+          <Text TextId="TOK_Name_ErrorType62" Value="Shear Pin 2" />
+          <Text TextId="TOK_Name_ErrorType64" Value="Drive OverLoad" />
+          <Text TextId="TOK_Name_ErrorType67" Value="Pump Off" />
+          <Text TextId="TOK_Name_ErrorType71" Value="Port 1 Adapter" />
+          <Text TextId="TOK_Name_ErrorType72" Value="Port 2 Adapter" />
+          <Text TextId="TOK_Name_ErrorType73" Value="Port 3 Adapter" />
+          <Text TextId="TOK_Name_ErrorType74" Value="Port 4 Adapter" />
+          <Text TextId="TOK_Name_ErrorType75" Value="Port 5 Adapter" />
+          <Text TextId="TOK_Name_ErrorType76" Value="Port 6 Adapter" />
+          <Text TextId="TOK_Name_ErrorType77" Value="IR Volts Range" />
+          <Text TextId="TOK_Name_ErrorType78" Value="FluxAmpsRef Rang" />
+          <Text TextId="TOK_Name_ErrorType79" Value="Excessive Load" />
+          <Text TextId="TOK_Name_ErrorType80" Value="AutoTune Aborted" />
+          <Text TextId="TOK_Name_ErrorType81" Value="Port 1 DPI Loss" />
+          <Text TextId="TOK_Name_ErrorType82" Value="Port 2 DPI Loss" />
+          <Text TextId="TOK_Name_ErrorType83" Value="Port 3 DPI Loss" />
+          <Text TextId="TOK_Name_ErrorType84" Value="Port 4 DPI Loss" />
+          <Text TextId="TOK_Name_ErrorType85" Value="Port 5 DPI Loss" />
+          <Text TextId="TOK_Name_ErrorType86" Value="Port 6 DPI Loss" />
+          <Text TextId="TOK_Name_ErrorType87" Value="IXo VoltageRange" />
+          <Text TextId="TOK_Name_ErrorType91" Value="Pri VelFdbk Loss" />
+          <Text TextId="TOK_Name_ErrorType93" Value="Hw Enable Check" />
+          <Text TextId="TOK_Name_ErrorType94" Value="Alt VelFdbk Loss" />
+          <Text TextId="TOK_Name_ErrorType95" Value="Aux VelFdbk Loss" />
+          <Text TextId="TOK_Name_ErrorType96" Value="PositionFdbkLoss" />
+          <Text TextId="TOK_Name_ErrorType97" Value="Auto Tach Switch" />
+          <Text TextId="TOK_Name_ErrorType100" Value="Parameter Chksum" />
+          <Text TextId="TOK_Name_ErrorType101" Value="PwrDn NVS Blank" />
+          <Text TextId="TOK_Name_ErrorType102" Value="NVS Not Blank" />
+          <Text TextId="TOK_Name_ErrorType103" Value="PwrDn NVS Incomp" />
+          <Text TextId="TOK_Name_ErrorType104" Value="Pwr Brd Checksum" />
+          <Text TextId="TOK_Name_ErrorType106" Value="Incompat MCB-PB" />
+          <Text TextId="TOK_Name_ErrorType107" Value="Replaced MCB-PB" />
+          <Text TextId="TOK_Name_ErrorType108" Value="Anlg Cal Chksum" />
+          <Text TextId="TOK_Name_ErrorType111" Value="PwrBd Invalid ID" />
+          <Text TextId="TOK_Name_ErrorType112" Value="PwrBd App MinVer" />
+          <Text TextId="TOK_Name_ErrorType113" Value="Tracking DataErr" />
+          <Text TextId="TOK_Name_ErrorType115" Value="PwrDn Table Full" />
+          <Text TextId="TOK_Name_ErrorType116" Value="PwrDnEntry2Large" />
+          <Text TextId="TOK_Name_ErrorType117" Value="PwrDn Data Chksm" />
+          <Text TextId="TOK_Name_ErrorType118" Value="PwrBd PwrDn Chks" />
+          <Text TextId="TOK_Name_ErrorType124" Value="App ID Changed" />
+          <Text TextId="TOK_Name_ErrorType125" Value="Using Backup App" />
+          <Text TextId="TOK_Name_ErrorType134" Value="Start On PowerUp" />
+          <Text TextId="TOK_Name_ErrorType137" Value="Ext Prechrg Err" />
+          <Text TextId="TOK_Name_ErrorType138" Value="Precharge Open" />
+          <Text TextId="TOK_Name_ErrorType141" Value="Autn Enc Angle" />
+          <Text TextId="TOK_Name_ErrorType142" Value="Autn Spd Rstrct" />
+          <Text TextId="TOK_Name_ErrorType143" Value="Autotune CurReg" />
+          <Text TextId="TOK_Name_ErrorType144" Value="Autotune Inertia" />
+          <Text TextId="TOK_Name_ErrorType145" Value="Autotune Travel" />
+          <Text TextId="TOK_Name_ErrorType152" Value="No Stop Source" />
+          <Text TextId="TOK_Name_ErrorType155" Value="Bipolar Conflict" />
+          <Text TextId="TOK_Name_ErrorType157" Value="DigIn Cfg B" />
+          <Text TextId="TOK_Name_ErrorType158" Value="DigIn Cfg C" />
+          <Text TextId="TOK_Name_ErrorType161" Value="Sleep Config" />
+          <Text TextId="TOK_Name_ErrorType162" Value="Waking" />
+          <Text TextId="TOK_Name_ErrorType168" Value="HeatSinkUnderTmp" />
+          <Text TextId="TOK_Name_ErrorType169" Value="PWM Freq Reduced" />
+          <Text TextId="TOK_Name_ErrorType170" Value="CurLimit Reduced" />
+          <Text TextId="TOK_Name_ErrorType171" Value="Adj Vltg Ref" />
+          <Text TextId="TOK_Name_ErrorType177" Value="Profiling Active" />
+          <Text TextId="TOK_Name_ErrorType178" Value="Homing Active" />
+          <Text TextId="TOK_Name_ErrorType179" Value="Home Not Set" />
+          <Text TextId="TOK_Name_ErrorType185" Value="Freq Conflict" />
+          <Text TextId="TOK_Name_ErrorType186" Value="VHz Neg Slope" />
+          <Text TextId="TOK_Name_ErrorType187" Value="VHz Boost Limit" />
+          <Text TextId="TOK_Name_ErrorType190" Value="PM FV Pri Fdbk" />
+          <Text TextId="TOK_Name_ErrorType191" Value="PM FV Alt Fdbk" />
+          <Text TextId="TOK_Name_ErrorType192" Value="Fwd Spd Lim Cfg" />
+          <Text TextId="TOK_Name_ErrorType193" Value="Rev Spd Lim Cfg" />
+          <Text TextId="TOK_Name_ErrorType201" Value="SpdReg DL Err" />
+          <Text TextId="TOK_Name_ErrorType202" Value="AltSpdReg DL Err" />
+          <Text TextId="TOK_Name_ErrorType203" Value="Port 13 Adapter" />
+          <Text TextId="TOK_Name_ErrorType204" Value="Port 14 Adapter" />
+          <Text TextId="TOK_Name_ErrorType205" Value="DPI TransportErr" />
+          <Text TextId="TOK_Name_ErrorType210" Value="HW Enbl Jmpr Out" />
+          <Text TextId="TOK_Name_ErrorType211" Value="Safety Brd Fault" />
+          <Text TextId="TOK_Name_ErrorType212" Value="Safety Jmpr Out" />
+          <Text TextId="TOK_Name_ErrorType213" Value="Safety Jumper In" />
+          <Text TextId="TOK_Name_ErrorType214" Value="SafetyPortCnflct" />
+          <Text TextId="TOK_Name_ErrorType224" Value="Port 4 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType225" Value="Port 5 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType226" Value="Port 6 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType227" Value="Port 7 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType228" Value="Port 8 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType229" Value="Port 9 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType230" Value="Port 10 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType231" Value="Port 11 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType232" Value="Port 12 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType233" Value="Port 13 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType234" Value="Port 14 Comm Loss" />
+          <Text TextId="TOK_Name_ErrorType244" Value="Port 4 Cfg" />
+          <Text TextId="TOK_Name_ErrorType245" Value="Port 5 Cfg" />
+          <Text TextId="TOK_Name_ErrorType246" Value="Port 6 Cfg" />
+          <Text TextId="TOK_Name_ErrorType247" Value="Port 7 Cfg" />
+          <Text TextId="TOK_Name_ErrorType248" Value="Port 8 Cfg" />
+          <Text TextId="TOK_Name_ErrorType249" Value="Port 9 Cfg" />
+          <Text TextId="TOK_Name_ErrorType250" Value="Port 10 Cfg" />
+          <Text TextId="TOK_Name_ErrorType251" Value="Port 11 Cfg" />
+          <Text TextId="TOK_Name_ErrorType252" Value="Port 12 Cfg" />
+          <Text TextId="TOK_Name_ErrorType253" Value="Port 13 Cfg" />
+          <Text TextId="TOK_Name_ErrorType254" Value="Port 14 Cfg" />
+          <Text TextId="TOK_Name_ErrorType264" Value="Port 4 Checksum" />
+          <Text TextId="TOK_Name_ErrorType265" Value="Port 5 Checksum" />
+          <Text TextId="TOK_Name_ErrorType266" Value="Port 6 Checksum" />
+          <Text TextId="TOK_Name_ErrorType267" Value="Port 7 Checksum" />
+          <Text TextId="TOK_Name_ErrorType268" Value="Port 8 Checksum" />
+          <Text TextId="TOK_Name_ErrorType269" Value="Port 9 Checksum" />
+          <Text TextId="TOK_Name_ErrorType270" Value="Port 10 Checksum" />
+          <Text TextId="TOK_Name_ErrorType271" Value="Port 11 Checksum"></Text>
+          <Text TextId="TOK_Name_ErrorType272" Value="Port 12 Checksum" />
+          <Text TextId="TOK_Name_ErrorType273" Value="Port 13 Checksum" />
+          <Text TextId="TOK_Name_ErrorType274" Value="Port 14 Checksum" />
+          <Text TextId="TOK_Name_ErrorType281" Value="ENet Checksum" />
+          <Text TextId="TOK_Name_ErrorType282" Value="DLX Checksum" />
+          <Text TextId="TOK_Name_ErrorType291" Value="HSFan Life" />
+          <Text TextId="TOK_Name_ErrorType292" Value="InFan Life" />
+          <Text TextId="TOK_Name_ErrorType293" Value="MtrBrng Life" />
+          <Text TextId="TOK_Name_ErrorType294" Value="MtrBrng Lube" />
+          <Text TextId="TOK_Name_ErrorType295" Value="MachBrng Life" />
+          <Text TextId="TOK_Name_ErrorType296" Value="MachBrng Lube" />
+          <Text TextId="TOK_Name_ErrorType307" Value="Port7InvalidCard" />
+          <Text TextId="TOK_Name_ErrorType308" Value="Port8InvalidCard" />
+          <Text TextId="TOK_Name_ErrorType918" Value="Control Task Overload" />
+          <Text TextId="TOK_Name_ErrorType919" Value="System Task Overload" />
+          <Text TextId="TOK_Name_ErrorType920" Value="5 msec Task Overload" />
+          <Text TextId="TOK_Name_ErrorType14037" Value="Net IO Timeout"></Text>
+          <!--errortype help name-->
+          <Text TextId="TOK_HelpName_ErrorType2" Value="Auxiliary Input" />
+          <Text TextId="TOK_HelpName_ErrorType3" Value="Power Loss" />
+          <Text TextId="TOK_HelpName_ErrorType4" Value="UnderVoltage" />
+          <Text TextId="TOK_HelpName_ErrorType5" Value="OverVoltage" />
+          <Text TextId="TOK_HelpName_ErrorType7" Value="Motor Overload" />
+          <Text TextId="TOK_HelpName_ErrorType8" Value="Heatsink OvrTemp" />
+          <Text TextId="TOK_HelpName_ErrorType9" Value="Trnsistr OvrTemp" />
+          <Text TextId="TOK_HelpName_ErrorType10" Value="DynBrake OvrTemp" />
+          <Text TextId="TOK_HelpName_ErrorType12" Value="HW OverCurrent" />
+          <Text TextId="TOK_HelpName_ErrorType13" Value="Ground Fault" />
+          <Text TextId="TOK_HelpName_ErrorType14" Value="Ground Warning" />
+          <Text TextId="TOK_HelpName_ErrorType15" Value="Load Loss" />
+          <Text TextId="TOK_HelpName_ErrorType17" Value="Input Phase Loss" />
+          <Text TextId="TOK_HelpName_ErrorType18" Value="Motor PTC Trip" />
+          <Text TextId="TOK_HelpName_ErrorType19" Value="Task Overrun" />
+          <Text TextId="TOK_HelpName_ErrorType20" Value="TorqPrv Spd Band" />
+          <Text TextId="TOK_HelpName_ErrorType21" Value="Output PhaseLoss" />
+          <Text TextId="TOK_HelpName_ErrorType24" Value="Decel Inhibit" />
+          <Text TextId="TOK_HelpName_ErrorType25" Value="OverSpeed Limit" />
+          <Text TextId="TOK_HelpName_ErrorType26" Value="Brake Slipped" />
+          <Text TextId="TOK_HelpName_ErrorType27" Value="Torq Prove Cflct" />
+          <Text TextId="TOK_HelpName_ErrorType28" Value="TP Encls Config" />
+          <Text TextId="TOK_HelpName_ErrorType29" Value="Analog In Loss" />
+          <Text TextId="TOK_HelpName_ErrorType33" Value="AuRsts Exhausted" />
+          <Text TextId="TOK_HelpName_ErrorType36" Value="SW OverCurrent" />
+          <Text TextId="TOK_HelpName_ErrorType38" Value="Phase U to Grnd" />
+          <Text TextId="TOK_HelpName_ErrorType39" Value="Phase V to Grnd" />
+          <Text TextId="TOK_HelpName_ErrorType40" Value="Phase W to Grnd" />
+          <Text TextId="TOK_HelpName_ErrorType41" Value="Phase UV Short" />
+          <Text TextId="TOK_HelpName_ErrorType42" Value="Phase VW Short" />
+          <Text TextId="TOK_HelpName_ErrorType43" Value="Phase WU Short" />
+          <Text TextId="TOK_HelpName_ErrorType44" Value="Phase UNegToGrnd" />
+          <Text TextId="TOK_HelpName_ErrorType45" Value="Phase VNegToGrnd" />
+          <Text TextId="TOK_HelpName_ErrorType46" Value="Phase WNegToGrnd" />
+          <Text TextId="TOK_HelpName_ErrorType48" Value="System Defaulted" />
+          <Text TextId="TOK_HelpName_ErrorType49" Value="Drive Powerup" />
+          <Text TextId="TOK_HelpName_ErrorType51" Value="Clr Fault Queue" />
+          <Text TextId="TOK_HelpName_ErrorType55" Value="Ctrl Bd Overtemp" />
+          <Text TextId="TOK_HelpName_ErrorType58" Value="Module Defaulted" />
+          <Text TextId="TOK_HelpName_ErrorType59" Value="Invalid Code" />
+          <Text TextId="TOK_HelpName_ErrorType61" Value="Shear Pin 1" />
+          <Text TextId="TOK_HelpName_ErrorType62" Value="Shear Pin 2" />
+          <Text TextId="TOK_HelpName_ErrorType64" Value="Drive OverLoad" />
+          <Text TextId="TOK_HelpName_ErrorType67" Value="Pump Off" />
+          <Text TextId="TOK_HelpName_ErrorType71" Value="Port 1 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType72" Value="Port 2 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType73" Value="Port 3 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType74" Value="Port 4 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType75" Value="Port 5 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType76" Value="Port 6 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType77" Value="IR Volts Range" />
+          <Text TextId="TOK_HelpName_ErrorType78" Value="FluxAmpsRef Rang" />
+          <Text TextId="TOK_HelpName_ErrorType79" Value="Excessive Load" />
+          <Text TextId="TOK_HelpName_ErrorType80" Value="AutoTune Aborted" />
+          <Text TextId="TOK_HelpName_ErrorType81" Value="Port 1 DPI Loss" />
+          <Text TextId="TOK_HelpName_ErrorType82" Value="Port 2 DPI Loss" />
+          <Text TextId="TOK_HelpName_ErrorType83" Value="Port 3 DPI Loss" />
+          <Text TextId="TOK_HelpName_ErrorType84" Value="Port 4 DPI Loss" />
+          <Text TextId="TOK_HelpName_ErrorType85" Value="Port 5 DPI Loss" />
+          <Text TextId="TOK_HelpName_ErrorType86" Value="Port 6 DPI Loss" />
+          <Text TextId="TOK_HelpName_ErrorType87" Value="IXo VoltageRange" />
+          <Text TextId="TOK_HelpName_ErrorType91" Value="Pri VelFdbk Loss" />
+          <Text TextId="TOK_HelpName_ErrorType93" Value="Hw Enable Check" />
+          <Text TextId="TOK_HelpName_ErrorType94" Value="Alt VelFdbk Loss" />
+          <Text TextId="TOK_HelpName_ErrorType95" Value="Aux VelFdbk Loss" />
+          <Text TextId="TOK_HelpName_ErrorType96" Value="PositionFdbkLoss" />
+          <Text TextId="TOK_HelpName_ErrorType97" Value="Auto Tach Switch" />
+          <Text TextId="TOK_HelpName_ErrorType100" Value="Parameter Chksum" />
+          <Text TextId="TOK_HelpName_ErrorType101" Value="PwrDn NVS Blank" />
+          <Text TextId="TOK_HelpName_ErrorType102" Value="NVS Not Blank" />
+          <Text TextId="TOK_HelpName_ErrorType103" Value="PwrDn NVS Incomp" />
+          <Text TextId="TOK_HelpName_ErrorType104" Value="Pwr Brd Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType106" Value="Incompat MCB-PB" />
+          <Text TextId="TOK_HelpName_ErrorType107" Value="Replaced MCB-PB" />
+          <Text TextId="TOK_HelpName_ErrorType108" Value="Anlg Cal Chksum" />
+          <Text TextId="TOK_HelpName_ErrorType111" Value="PwrBd Invalid ID" />
+          <Text TextId="TOK_HelpName_ErrorType112" Value="PwrBd App MinVer" />
+          <Text TextId="TOK_HelpName_ErrorType113" Value="Tracking DataErr" />
+          <Text TextId="TOK_HelpName_ErrorType115" Value="PwrDn Table Full" />
+          <Text TextId="TOK_HelpName_ErrorType116" Value="PwrDnEntry2Large" />
+          <Text TextId="TOK_HelpName_ErrorType117" Value="PwrDn Data Chksm" />
+          <Text TextId="TOK_HelpName_ErrorType118" Value="PwrBd PwrDn Chks" />
+          <Text TextId="TOK_HelpName_ErrorType124" Value="App ID Changed" />
+          <Text TextId="TOK_HelpName_ErrorType125" Value="Using Backup App" />
+          <Text TextId="TOK_HelpName_ErrorType134" Value="Start On PowerUp" />
+          <Text TextId="TOK_HelpName_ErrorType137" Value="Ext Prechrg Err" />
+          <Text TextId="TOK_HelpName_ErrorType138" Value="Precharge Open" />
+          <Text TextId="TOK_HelpName_ErrorType141" Value="Autn Enc Angle" />
+          <Text TextId="TOK_HelpName_ErrorType142" Value="Autn Spd Rstrct" />
+          <Text TextId="TOK_HelpName_ErrorType143" Value="Autotune CurReg" />
+          <Text TextId="TOK_HelpName_ErrorType144" Value="Autotune Inertia" />
+          <Text TextId="TOK_HelpName_ErrorType145" Value="Autotune Travel" />
+          <Text TextId="TOK_HelpName_ErrorType152" Value="No Stop Source" />
+          <Text TextId="TOK_HelpName_ErrorType155" Value="Bipolar Conflict" />
+          <Text TextId="TOK_HelpName_ErrorType157" Value="DigIn Cfg B" />
+          <Text TextId="TOK_HelpName_ErrorType158" Value="DigIn Cfg C" />
+          <Text TextId="TOK_HelpName_ErrorType161" Value="Sleep Config" />
+          <Text TextId="TOK_HelpName_ErrorType162" Value="Waking" />
+          <Text TextId="TOK_HelpName_ErrorType168" Value="HeatSinkUnderTmp" />
+          <Text TextId="TOK_HelpName_ErrorType169" Value="PWM Freq Reduced" />
+          <Text TextId="TOK_HelpName_ErrorType170" Value="CurLimit Reduced" />
+          <Text TextId="TOK_HelpName_ErrorType171" Value="Adj Vltg Ref" />
+          <Text TextId="TOK_HelpName_ErrorType177" Value="Profiling Active" />
+          <Text TextId="TOK_HelpName_ErrorType178" Value="Homing Active" />
+          <Text TextId="TOK_HelpName_ErrorType179" Value="Home Not Set" />
+          <Text TextId="TOK_HelpName_ErrorType185" Value="Freq Conflict" />
+          <Text TextId="TOK_HelpName_ErrorType186" Value="VHz Neg Slope" />
+          <Text TextId="TOK_HelpName_ErrorType187" Value="VHz Boost Limit" />
+          <Text TextId="TOK_HelpName_ErrorType190" Value="PM FV Pri Fdbk" />
+          <Text TextId="TOK_HelpName_ErrorType191" Value="PM FV Alt Fdbk" />
+          <Text TextId="TOK_HelpName_ErrorType192" Value="Fwd Spd Lim Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType193" Value="Rev Spd Lim Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType201" Value="SpdReg DL Err" />
+          <Text TextId="TOK_HelpName_ErrorType202" Value="AltSpdReg DL Err" />
+          <Text TextId="TOK_HelpName_ErrorType203" Value="Port 13 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType204" Value="Port 14 Adapter" />
+          <Text TextId="TOK_HelpName_ErrorType205" Value="DPI TransportErr" />
+          <Text TextId="TOK_HelpName_ErrorType210" Value="HW Enbl Jmpr Out" />
+          <Text TextId="TOK_HelpName_ErrorType211" Value="Safety Brd Fault" />
+          <Text TextId="TOK_HelpName_ErrorType212" Value="Safety Jmpr Out" />
+          <Text TextId="TOK_HelpName_ErrorType213" Value="Safety Jumper In" />
+          <Text TextId="TOK_HelpName_ErrorType214" Value="SafetyPortCnflct" />
+          <Text TextId="TOK_HelpName_ErrorType224" Value="Port4 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType225" Value="Port5 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType226" Value="Port6 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType227" Value="Port7 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType228" Value="Port8 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType229" Value="Port9 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType230" Value="Port10 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType231" Value="Port11 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType232" Value="Port12 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType233" Value="Port13 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType234" Value="Port14 Comm Loss" />
+          <Text TextId="TOK_HelpName_ErrorType244" Value="Port 4 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType245" Value="Port 5 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType246" Value="Port 6 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType247" Value="Port 7 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType248" Value="Port 8 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType249" Value="Port 9 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType250" Value="Port 10 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType251" Value="Port 11 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType252" Value="Port 12 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType253" Value="Port 13 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType254" Value="Port 14 Cfg" />
+          <Text TextId="TOK_HelpName_ErrorType264" Value="Port 4 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType265" Value="Port 5 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType266" Value="Port 6 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType267" Value="Port 7 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType268" Value="Port 8 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType269" Value="Port 9 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType270" Value="Port10 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType271" Value="Port11 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType272" Value="Port12 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType273" Value="Port13 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType274" Value="Port14 Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType281" Value="ENet Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType282" Value="DLX Checksum" />
+          <Text TextId="TOK_HelpName_ErrorType291" Value="HSFan Life" />
+          <Text TextId="TOK_HelpName_ErrorType292" Value="InFan Life" />
+          <Text TextId="TOK_HelpName_ErrorType293" Value="MtrBrng Life" />
+          <Text TextId="TOK_HelpName_ErrorType294" Value="MtrBrng Lube" />
+          <Text TextId="TOK_HelpName_ErrorType295" Value="MachBrng Life" />
+          <Text TextId="TOK_HelpName_ErrorType296" Value="MachBrng Lube" />
+          <Text TextId="TOK_HelpName_ErrorType307" Value="Port7InvalidCard" />
+          <Text TextId="TOK_HelpName_ErrorType308" Value="Port8InvalidCard" />
+          <Text TextId="TOK_HelpName_ErrorType918" Value="Control Task Overload" />
+          <Text TextId="TOK_HelpName_ErrorType919" Value="System Task Overload" />
+          <Text TextId="TOK_HelpName_ErrorType920" Value="5 msec Task Overload" />
+          <Text TextId="TOK_HelpName_ErrorType14037" Value="Net IO Timeout" />
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>
